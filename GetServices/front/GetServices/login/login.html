@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="icon" type="png" href="img_login_GS/favicon-32x32.png">
+    <link rel="stylesheet" href="../theme/theme.css">
+</head>
+
+<body>
+    <div class="container-login">
+
+        <div class="marca">
+            <a href="../pagina_principal/index.html">
+                <img src="img_login_GS/GS_Logo.png" class="GS_Logo" alt="logo_GS">
+            </a>
+
+            <h1>Get Services</h1>
+        </div>
+
+        <div class="imagem-login">
+            <img id="imagemTipoUsuario" src="img_login_GS/secretaria_login_GS.jpg" alt="login_GetServices">
+        </div>
+
+        <div class="campo_login">
+
+            <div class="login-header">
+                <h1 class="titulo">Bem-vindo de volta!</h1>
+                <p>Escolha seu tipo de perfil e entre na sua conta</p>
+            </div>
+
+            <form class="form-login" id="formLogin">
+                <label for="tipoUsuario">Entrar como</label>
+                <select id="tipoUsuario" name="tipoUsuario" required>
+                    <option value="cliente" selected>Cliente</option>
+                    <option value="profissional">Profissional</option>
+                </select>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+
+                <div class="botoes">
+                    <button type="submit">Entrar</button>
+
+                    <a href="../pagina_principal/index.html" class="voltar">
+                        <button type="button">voltar</button>
+                    </a>
+                </div>
+
+                <p class="texto-cadastro">
+                    Ainda não possui conta? <a href="../cadastro/cadastro.html">Cadastre-se</a>
+                </p>
+            <p id="mensagemLogin" class="mensagem"></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'http://localhost:8080/api';
+
+        const tipoUsuario = document.getElementById('tipoUsuario');
+        const imagemTipoUsuario = document.getElementById('imagemTipoUsuario');
+        const formLogin = document.getElementById('formLogin');
+        const mensagemLogin = document.getElementById('mensagemLogin');
+
+        tipoUsuario.addEventListener('change', function () {
+            if (tipoUsuario.value === 'profissional') {
+                imagemTipoUsuario.src = 'img_login_GS/login_profissional_GS.jpg';
+                imagemTipoUsuario.alt = 'login_profissional_GS';
+            } else {
+                imagemTipoUsuario.src = 'img_login_GS/secretaria_login_GS.jpg';
+                imagemTipoUsuario.alt = 'login_cliente_GS';
+            }
+        });
+
+        formLogin.addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            const dadosLogin = {
+                email: document.getElementById('email').value,
+                senha: document.getElementById('senha').value,
+                tipoUsuario: tipoUsuario.value
+            };
+
+            try {
+                const resposta = await fetch(`${API_URL}/auth/login`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(dadosLogin)
+                });
+
+                const dados = await resposta.json();
+
+                if (!resposta.ok) {
+                    throw new Error(dados.erro || 'Não foi possível fazer login.');
+                }
+
+                localStorage.setItem('usuarioLogado', JSON.stringify(dados));
+                mensagemLogin.textContent = `Login realizado com sucesso. Bem-vindo(a), ${dados.nome}!`;
+                mensagemLogin.className = 'mensagem sucesso';
+            } catch (erro) {
+                mensagemLogin.textContent = erro.message;
+                mensagemLogin.className = 'mensagem erro';
+            }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="../theme/react-theme-toggle.js"></script>
+</body>
+
+</html>

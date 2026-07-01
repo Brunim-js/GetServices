@@ -1,0 +1,300 @@
+/* Modo claro/escuro - GetServices
+   React controla a classe body.dark-mode; este CSS controla o visual. */
+:root {
+  color-scheme: light;
+}
+
+body {
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.theme-toggle-btn {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 9999;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 16px;
+  background: #111827;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+  transition: transform 0.2s ease, background-color 0.25s ease, color 0.25s ease;
+}
+
+.theme-toggle-btn:hover {
+  transform: translateY(-2px);
+}
+
+body.dark-mode {
+  background: #0b1120 !important;
+  color: #f8fafc !important;
+  color-scheme: dark;
+}
+
+body.dark-mode .theme-toggle-btn {
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+/* Campos */
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select,
+body.dark-mode .form-control {
+  background-color: #111827 !important;
+  color: #f8fafc !important;
+  border-color: #334155 !important;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Imagens levemente suavizadas no modo escuro */
+body.dark-mode img {
+  filter: brightness(0.92);
+}
+
+/* =========================
+   PÁGINAS DE SERVIÇOS
+   limpeza / eletrica / construção / informática
+   ========================= */
+body.dark-mode .gs-banner {
+  background: linear-gradient(135deg, #0f172a 0%, #111827 55%, #062014 100%) !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .gs-banner h1,
+body.dark-mode .gs-banner h2,
+body.dark-mode .gs-banner p {
+  color: #ffffff !important;
+}
+
+body.dark-mode .drawer {
+  background: #0b1120 !important;
+}
+
+body.dark-mode .drawer .drawer-title {
+  color: #f8fafc !important;
+}
+
+body.dark-mode .drawer-tabs {
+  background: #111827 !important;
+  border-color: #334155 !important;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.28) !important;
+}
+
+body.dark-mode .drawer-tabs .nav-tabs {
+  border-bottom-color: #334155 !important;
+}
+
+body.dark-mode .drawer-tabs .nav-link {
+  color: #cbd5e1 !important;
+  background: transparent !important;
+  border-color: transparent !important;
+}
+
+body.dark-mode .drawer-tabs .nav-link:hover {
+  color: #ffffff !important;
+  background: rgba(0, 194, 122, 0.12) !important;
+}
+
+body.dark-mode .drawer-tabs .nav-link.active {
+  background: #00c27a !important;
+  color: #ffffff !important;
+  border-color: #00c27a !important;
+}
+
+body.dark-mode .card-gs {
+  background: #172033 !important;
+  border-color: #334155 !important;
+  color: #f8fafc !important;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.30) !important;
+}
+
+body.dark-mode .card-gs h1,
+body.dark-mode .card-gs h2,
+body.dark-mode .card-gs h3,
+body.dark-mode .card-gs h4,
+body.dark-mode .card-gs .title,
+body.dark-mode .card-gs .title h3 {
+  color: #f8fafc !important;
+}
+
+body.dark-mode .card-gs .desc,
+body.dark-mode .card-gs p {
+  color: #cbd5e1 !important;
+}
+
+body.dark-mode .card-gs .benefits ul,
+body.dark-mode .card-gs .benefits li,
+body.dark-mode .benefits ul,
+body.dark-mode .benefits li {
+  color: #e2e8f0 !important;
+}
+
+body.dark-mode .card-gs .top .title .ic {
+  background: rgba(0, 194, 122, 0.16) !important;
+  border-color: rgba(0, 194, 122, 0.45) !important;
+  color: #00c27a !important;
+}
+
+body.dark-mode .price-badge {
+  background: rgba(0, 194, 122, 0.16) !important;
+  border-color: rgba(0, 194, 122, 0.48) !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .price-badge span:first-child {
+  color: #a7f3d0 !important;
+}
+
+body.dark-mode .price-badge span:last-child {
+  color: #ffffff !important;
+}
+
+body.dark-mode .btn-solicitar {
+  background: transparent !important;
+  color: #34d399 !important;
+  border-color: rgba(52, 211, 153, 0.85) !important;
+}
+
+body.dark-mode .btn-solicitar:hover {
+  background: #00c27a !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .gs-banner .btn-voltar {
+  background: #111827 !important;
+  color: #ffffff !important;
+  border-color: #475569 !important;
+}
+
+/* Cards informativos do rodapé das páginas de serviços */
+body.dark-mode .cards-wrap,
+body.dark-mode .cards-wrap h1,
+body.dark-mode .cards-wrap h2,
+body.dark-mode .cards-wrap h3 {
+  color: #f8fafc !important;
+}
+
+body.dark-mode .cards-wrap p,
+body.dark-mode .cards-wrap li {
+  color: #e2e8f0 !important;
+}
+
+/* =========================
+   PÁGINA PRINCIPAL
+   ========================= */
+body.dark-mode .gs-nav,
+body.dark-mode .cards-section {
+  background: #0f172a !important;
+}
+
+body.dark-mode .cards-section .card {
+  background: #172033 !important;
+  border: 1px solid #334155 !important;
+  color: #f8fafc !important;
+}
+
+body.dark-mode .cards-section .card-title,
+body.dark-mode .cards-section h1,
+body.dark-mode .cards-section h2,
+body.dark-mode .cards-section h3 {
+  color: #f8fafc !important;
+}
+
+body.dark-mode .cards-section .card-text,
+body.dark-mode .cards-section p {
+  color: #cbd5e1 !important;
+}
+
+body.dark-mode .descricao,
+body.dark-mode .texto-descricao,
+body.dark-mode .blocos-objetivos {
+  background: #0b1120 !important;
+  color: #f8fafc !important;
+}
+
+body.dark-mode .descricao h1,
+body.dark-mode .texto-descricao h1,
+body.dark-mode .blocos-objetivos h1,
+body.dark-mode .blocos-objetivos h2,
+body.dark-mode .blocos-objetivos h3 {
+  color: #f8fafc !important;
+}
+
+body.dark-mode .descricao p,
+body.dark-mode .texto-descricao p,
+body.dark-mode .blocos-objetivos p {
+  color: #cbd5e1 !important;
+}
+
+body.dark-mode .subtitulo-quadrado {
+  background: #00c27a !important;
+  color: #ffffff !important;
+}
+
+/* =========================
+   LOGIN / CADASTRO
+   ========================= */
+body.dark-mode .login-container,
+body.dark-mode .cadastro-container,
+body.dark-mode .form-container,
+body.dark-mode form {
+  background-color: #172033 !important;
+  color: #f8fafc !important;
+  border-color: #334155 !important;
+}
+
+body.dark-mode .login-container h1,
+body.dark-mode .login-container h2,
+body.dark-mode .cadastro-container h1,
+body.dark-mode .cadastro-container h2,
+body.dark-mode label {
+  color: #f8fafc !important;
+}
+
+body.dark-mode .login-container p,
+body.dark-mode .cadastro-container p,
+body.dark-mode .login-container a,
+body.dark-mode .cadastro-container a {
+  color: #cbd5e1 !important;
+}
+
+/* Correção final: cards informativos inferiores das páginas de serviços */
+body.dark-mode .cards-wrap .card {
+  background: #172033 !important;
+  border: 1px solid #334155 !important;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.30) !important;
+  color: #f8fafc !important;
+}
+
+body.dark-mode .cards-wrap .card .card-body {
+  background: transparent !important;
+  color: #f8fafc !important;
+}
+
+body.dark-mode .cards-wrap .card h1,
+body.dark-mode .cards-wrap .card h2,
+body.dark-mode .cards-wrap .card h3,
+body.dark-mode .cards-wrap .card h4,
+body.dark-mode .cards-wrap .card h5,
+body.dark-mode .cards-wrap .card h6 {
+  color: #f8fafc !important;
+}
+
+body.dark-mode .cards-wrap .card p,
+body.dark-mode .cards-wrap .card span,
+body.dark-mode .cards-wrap .card li {
+  color: #dbeafe !important;
+}
+
+body.dark-mode .cards-wrap .card:hover {
+  border-color: rgba(52, 211, 153, 0.45) !important;
+}

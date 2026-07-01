@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elétrica | Get Services</title>
+
+        
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="eletrica.css">
+
+    <link rel="icon" type="png" href="../pagina_principal/img_principal_GS/favicon-32x32.png" />
+
+    <link rel="stylesheet" href="../theme/theme.css">
+</head>
+    
+<body>
+
+    <section class="gs-banner">
+        <div class="banner-wrap">
+            <div class="banner-text">
+                <h2>Instalações Elétricas</h2>
+                <p>
+                    Escolha o serviço elétrico que melhor atende às suas necessidades. Conte com profissionais qualificados para realizar instalações, manutenções e reparos com segurança, eficiência e qualidade.
+                </p>
+
+                <div class="mt-3 d-flex gap-2 flex-wrap">
+                    <a href="../pagina_principal/index.html" class="btn btn-voltar">Voltar</a>
+                </div>
+            </div>
+
+            <div class="banner-image">
+                <img src="img_servicos_GS/paginaServicos_eletricista.png" alt="Eletricista Get Services">
+            </div>
+        </div>
+    </section>
+
+
+    <section class="drawer">
+        <div class="drawer-title">Selecione o serviço</div>
+
+        <div class="drawer-tabs">
+            <ul class="nav nav-tabs" id="servicosTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="tab-residencial" data-bs-toggle="tab"
+                        data-bs-target="#pane-residencial" type="button" role="tab" aria-controls="pane-residencial"
+                        aria-selected="true">
+                        <span class="tab-ic"></span> Instalações Elétricas
+                    </button>
+                </li>
+
+                <li class="nav-item" role="presentation">
+<button class="nav-link" id="tab-comercial" data-bs-toggle="tab" data-bs-target="#pane-comercial" type="button" role="tab" aria-controls="pane-comercial" aria-selected="false">
+                        <span class="tab-ic"></span> Manutenção Elétrica
+                    </button>
+                </li>
+
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="tab-posobra" data-bs-toggle="tab" data-bs-target="#pane-posobra"
+                        type="button" role="tab" aria-controls="pane-posobra" aria-selected="false">
+                        <span class="tab-ic"></span> Instalação de Equipamentos Elétricos
+                    </button>
+                </li>
+
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="tab-estofados" data-bs-toggle="tab" data-bs-target="#pane-estofados"
+                        type="button" role="tab" aria-controls="pane-estofados" aria-selected="false">
+                        <span class="tab-ic"></span> Inspeção e Segurança Elétrica
+                    </button>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="servicosTabContent">
+                <div class="tab-pane fade show active" id="pane-residencial" role="tabpanel"
+                    aria-labelledby="tab-residencial" tabindex="0">
+                    <div class="tab-panel">
+                        <div class="row g-3">
+                            <div class="col-12 col-md-6">
+                                <div class="card-gs h-100">
+                                    <div class="top">
+                                        <div class="title">
+                                            <div class="ic">⚡</div>
+                                            <h3>Instalações Elétricas</h3>
+                                        </div>
+                                        <div class="price-badge">
+                                            <span>Preço inicial</span>
+                                            <span>R$ 180,00</span>
+                                        </div>
+                                    </div>
+
+                                    <p class="desc">Instalação de tomadas, interruptores, luminárias, ventiladores de teto e novos pontos elétricos para residências e empresas.</p>
+
+                                    <div class="benefits">
+                                        <ul>
+                                            <li>Instalação de tomadas e interruptores</li>
+                                            <li>Instalação de luminárias e ventiladores</li>
+                                            <li>Novos pontos de energia</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="actions">
+                                        <button class="btn btn-solicitar" type="button"
+                                            onclick="solicitar('Limpeza Residencial')">
+                                            Solicitar Orçamento
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="pane-comercial" role="tabpanel" aria-labelledby="tab-comercial"
+                    tabindex="0">
+                    <div class="tab-panel">
+                        <div class="row g-3">
+                            <div class="col-12 col-md-6">
+                                <div class="card-gs h-100">
+                                    <div class="top">
+                                        <div class="title">
+                                            <div class="ic">🔧</div>
+                                            <h3>Manutenção Elétrica</h3>
+                                        </div>
+                                        <div class="price-badge">
+                                            <span>Preço inicial</span>
+                                            <span>R$ 150,00</span>
+                                        </div>
+                                    </div>
+
+                                    <p class="desc">Correção de falhas elétricas, troca de fiação, reparos em circuitos e manutenção preventiva para garantir segurança.</p>
+
+                                    <div class="benefits">
+                                        <ul>
+                                            <li>Troca de fiação</li>
+                                            <li>Reparo em curtos-circuitos</li>
+                                            <li>Manutenção preventiva</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="actions">
+                                        <button class="btn btn-solicitar" type="button"
+                                            onclick="solicitar('Limpeza Comercial')">
+                                            Solicitar Orçamento
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="pane-posobra" role="tabpanel" aria-labelledby="tab-posobra" tabindex="0">
+                    <div class="tab-panel">
+                        <div class="row g-3">
+                            <div class="col-12 col-md-6">
+                                <div class="card-gs h-100">
+                                    <div class="top">
+                                        <div class="title">
+                                            <div class="ic">🔌</div>
+                                            <h3>Instalação de Equipamentos Elétricos</h3>
+                                        </div>
+                                        <div class="price-badge">
+                                            <span>Preço inicial</span>
+                                            <span>R$ 250,00</span>
+                                        </div>
+                                    </div>
+
+                                    <p class="desc">Instalação segura de chuveiros, ar-condicionado, cooktops, fornos elétricos e outros equipamentos.</p>
+
+                                    <div class="benefits">
+                                        <ul>
+                                            <li>Instalação de chuveiros</li>
+                                            <li>Instalação de ar-condicionado</li>
+                                            <li>Ligação de equipamentos elétricos</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="actions">
+                                        <button class="btn btn-solicitar" type="button"
+                                            onclick="solicitar('Limpeza Pós-Obra')">
+                                            Solicitar Orçamento
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="pane-estofados" role="tabpanel" aria-labelledby="tab-estofados"
+                    tabindex="0">
+                    <div class="tab-panel">
+                        <div class="row g-3">
+                            <div class="col-12 col-md-6">
+                                <div class="card-gs h-100">
+                                    <div class="top">
+                                        <div class="title">
+                                            <div class="ic">🛡️</div>
+                                            <h3>Inspeção e Segurança Elétrica</h3>
+                                        </div>
+                                        <div class="price-badge">
+                                            <span>Preço inicial</span>
+                                            <span>R$ 300,00</span>
+                                        </div>
+                                    </div>
+
+                                    <p class="desc">Avaliação completa da instalação elétrica para identificar riscos, sobrecargas e garantir conformidade com normas de segurança.</p>
+
+                                    <div class="benefits">
+                                        <ul>
+                                            <li>Avaliação da rede elétrica</li>
+                                            <li>Identificação de riscos</li>
+                                            <li>Relatório técnico basico</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="actions">
+                                        <button class="btn btn-solicitar" type="button"
+                                            onclick="solicitar('Limpeza de Estofados')">
+                                            Solicitar Orçamento
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cards-wrap" aria-label="Observações">
+        <div class="row g-3">
+            <div class="col-12 col-lg-4">
+                <div class="card"
+                    style="border:0; border-radius:18px; box-shadow:0 12px 30px rgba(15,23,42,.06); border:1px solid rgba(15,23,42,.08);">
+                    <div class="card-body">
+                        <h5 style="font-weight:1000; color:var(--dark);">Orçamento rápido</h5>
+                        <p class="mb-0" style="color:var(--muted); line-height:1.7;">
+                            Ao solicitar, você informa o tipo de serviço e recebe retorno para agendar.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="card"
+                    style="border:0; border-radius:18px; box-shadow:0 12px 30px rgba(15,23,42,.06); border:1px solid rgba(15,23,42,.08);">
+                    <div class="card-body">
+                        <h5 style="font-weight:1000; color:var(--dark);">Atendimento organizado</h5>
+                        <p class="mb-0" style="color:var(--muted); line-height:1.7;">
+                            Estrutura simples para você comparar opções e escolher com confiança.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="card"
+                    style="border:0; border-radius:18px; box-shadow:0 12px 30px rgba(15,23,42,.06); border:1px solid rgba(15,23,42,.08);">
+                    <div class="card-body">
+                        <h5 style="font-weight:1000; color:var(--dark);">Preços variam</h5>
+                        <p class="mb-0" style="color:var(--muted); line-height:1.7;">
+                            Os valores exibidos são exemplos e podem mudar conforme detalhes do serviço.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="solicitacoes-orcamento.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="../theme/react-theme-toggle.js"></script>
+</body>
+
+
+</html>

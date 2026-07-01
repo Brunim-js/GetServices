@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Limpeza | Get Services</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" />
+    <link rel="icon" type="png" href="../pagina_principal/img_principal_GS/favicon-32x32.png" />
+
+    <link rel="stylesheet" href="limpeza.css">
+    <link rel="stylesheet" href="../theme/theme.css">
+</head>
+
+<body>
+
+    <section class="gs-banner">
+        <div class="banner-wrap">
+            <div class="banner-text">
+                <h2>Limpeza Residencial e Comercial</h2>
+                <p>
+                    Escolha o tipo de serviço, veja as opções de orçamento e solicite de forma rápida e segura.
+                </p>
+
+                <div class="mt-3 d-flex gap-2 flex-wrap">
+                    <a href="../pagina_principal/index.html" class="btn btn-voltar">Voltar</a>
+                </div>
+            </div>
+
+            <div class="banner-image">
+                <img src="img_servicos_GS/paginaServicos_faxineira.png" alt="Profissional de limpeza Get Services">
+            </div>
+        </div>
+    </section>
+
+
+    <section class="drawer">
+        <div class="drawer-title">Selecione o serviço</div>
+
+        <div class="drawer-tabs">
+            <ul class="nav nav-tabs" id="servicosTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="tab-residencial" data-bs-toggle="tab"
+                        data-bs-target="#pane-residencial" type="button" role="tab" aria-controls="pane-residencial"
+                        aria-selected="true">
+                        <span class="tab-ic">🏠</span> Limpeza Residencial
+                    </button>
+                </li>
+
+                <li class="nav-item" role="presentation">
+<button class="nav-link" id="tab-comercial" data-bs-toggle="tab" data-bs-target="#pane-comercial" type="button" role="tab" aria-controls="pane-comercial" aria-selected="false">
+                        <span class="tab-ic">🏢</span> Limpeza Comercial
+                    </button>
+                </li>
+
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="tab-posobra" data-bs-toggle="tab" data-bs-target="#pane-posobra"
+                        type="button" role="tab" aria-controls="pane-posobra" aria-selected="false">
+                        <span class="tab-ic">🧱</span> Limpeza Pós-Obra
+                    </button>
+                </li>
+
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="tab-estofados" data-bs-toggle="tab" data-bs-target="#pane-estofados"
+                        type="button" role="tab" aria-controls="pane-estofados" aria-selected="false">
+                        <span class="tab-ic">🛋️</span> Limpeza de Estofados
+                    </button>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="servicosTabContent">
+                <div class="tab-pane fade show active" id="pane-residencial" role="tabpanel"
+                    aria-labelledby="tab-residencial" tabindex="0">
+                    <div class="tab-panel">
+                        <div class="row g-3">
+                            <div class="col-12 col-md-6">
+                                <div class="card-gs h-100">
+                                    <div class="top">
+                                        <div class="title">
+                                            <div class="ic">🏠</div>
+                                            <h3>Limpeza Residencial</h3>
+                                        </div>
+                                        <div class="price-badge">
+                                            <span>Preço inicial</span>
+                                            <span>R$ 200,00</span>
+                                        </div>
+                                    </div>
+
+                                    <p class="desc">Ideal para manter sua casa sempre organizada, com cuidado e
+                                        praticidade.</p>
+
+                                    <div class="benefits">
+                                        <ul>
+                                            <li>Até 4 cômodos</li>
+                                            <li>Produtos inclusos</li>
+                                            <li>Profissional qualificado</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="actions">
+                                        <button class="btn btn-solicitar" type="button"
+                                            onclick="solicitar('Limpeza Residencial')">
+                                            Solicitar Orçamento
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="pane-comercial" role="tabpanel" aria-labelledby="tab-comercial"
+                    tabindex="0">
+                    <div class="tab-panel">
+                        <div class="row g-3">
+                            <div class="col-12 col-md-6">
+                                <div class="card-gs h-100">
+                                    <div class="top">
+                                        <div class="title">
+                                            <div class="ic">🏢</div>
+                                            <h3>Limpeza Comercial</h3>
+                                        </div>
+                                        <div class="price-badge">
+                                            <span>Preço inicial</span>
+                                            <span>R$ 400,00</span>
+                                        </div>
+                                    </div>
+
+                                    <p class="desc">Serviços para escritórios e lojas, com atendimento e padrão de
+                                        qualidade.</p>
+
+                                    <div class="benefits">
+                                        <ul>
+                                            <li>Escritórios e lojas</li>
+                                            <li>Atendimento personalizado</li>
+                                            <li>Equipe especializada</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="actions">
+                                        <button class="btn btn-solicitar" type="button"
+                                            onclick="solicitar('Limpeza Comercial')">
+                                            Solicitar Orçamento
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="pane-posobra" role="tabpanel" aria-labelledby="tab-posobra" tabindex="0">
+                    <div class="tab-panel">
+                        <div class="row g-3">
+                            <div class="col-12 col-md-6">
+                                <div class="card-gs h-100">
+                                    <div class="top">
+                                        <div class="title">
+                                            <div class="ic">🧱</div>
+                                            <h3>Limpeza Pós-Obra</h3>
+                                        </div>
+                                        <div class="price-badge">
+                                            <span>Preço inicial</span>
+                                            <span>R$ 600,00</span>
+                                        </div>
+                                    </div>
+
+                                    <p class="desc">Limpeza pesada com foco na remoção de resíduos e finalização do
+                                        ambiente.</p>
+
+                                    <div class="benefits">
+                                        <ul>
+                                            <li>Remoção de resíduos</li>
+                                            <li>Limpeza pesada</li>
+                                            <li>Equipamentos profissionais</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="actions">
+                                        <button class="btn btn-solicitar" type="button"
+                                            onclick="solicitar('Limpeza Pós-Obra')">
+                                            Solicitar Orçamento
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="pane-estofados" role="tabpanel" aria-labelledby="tab-estofados"
+                    tabindex="0">
+                    <div class="tab-panel">
+                        <div class="row g-3">
+                            <div class="col-12 col-md-6">
+                                <div class="card-gs h-100">
+                                    <div class="top">
+                                        <div class="title">
+                                            <div class="ic">🛋️</div>
+                                            <h3>Limpeza de Estofados</h3>
+                                        </div>
+                                        <div class="price-badge">
+                                            <span>Preço inicial</span>
+                                            <span>R$ 180,00</span>
+                                        </div>
+                                    </div>
+
+                                    <p class="desc">Sofás, poltronas e colchões com cuidado para devolver aparência e
+                                        conforto.</p>
+
+                                    <div class="benefits">
+                                        <ul>
+                                            <li>Sofás</li>
+                                            <li>Poltronas</li>
+                                            <li>Colchões</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="actions">
+                                        <button class="btn btn-solicitar" type="button"
+                                            onclick="solicitar('Limpeza de Estofados')">
+                                            Solicitar Orçamento
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cards-wrap" aria-label="Observações">
+        <div class="row g-3">
+            <div class="col-12 col-lg-4">
+                <div class="card"
+                    style="border:0; border-radius:18px; box-shadow:0 12px 30px rgba(15,23,42,.06); border:1px solid rgba(15,23,42,.08);">
+                    <div class="card-body">
+                        <h5 style="font-weight:1000; color:var(--dark);">Orçamento rápido</h5>
+                        <p class="mb-0" style="color:var(--muted); line-height:1.7;">
+                            Ao solicitar, você informa o tipo de serviço e recebe retorno para agendar.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="card"
+                    style="border:0; border-radius:18px; box-shadow:0 12px 30px rgba(15,23,42,.06); border:1px solid rgba(15,23,42,.08);">
+                    <div class="card-body">
+                        <h5 style="font-weight:1000; color:var(--dark);">Atendimento organizado</h5>
+                        <p class="mb-0" style="color:var(--muted); line-height:1.7;">
+                            Estrutura simples para você comparar opções e escolher com confiança.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="card"
+                    style="border:0; border-radius:18px; box-shadow:0 12px 30px rgba(15,23,42,.06); border:1px solid rgba(15,23,42,.08);">
+                    <div class="card-body">
+                        <h5 style="font-weight:1000; color:var(--dark);">Preços variam</h5>
+                        <p class="mb-0" style="color:var(--muted); line-height:1.7;">
+                            Os valores exibidos são exemplos e podem mudar conforme detalhes do serviço.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="solicitacoes-orcamento.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="../theme/react-theme-toggle.js"></script>
+</body>
+
+</html>

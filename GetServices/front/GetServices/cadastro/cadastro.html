@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cadastro</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="cadastro.css">
+    <link rel="icon" type="png" href="img_cadastro_GS/favicon-32x32.png">
+    <link rel="stylesheet" href="../theme/theme.css">
+</head>
+
+<body>
+    <div class="container-cadastro">
+
+        <div class="marca">
+            <a href="../pagina_principal/index.html">
+                <img src="img_cadastro_GS/GS_Logo.png" class="GS_Logo" alt="logo_GS">
+            </a>
+
+            <h1>Get Services</h1>
+        </div>
+
+        <div class="imagem-cadastro">
+            <img src="img_cadastro_GS/cadastro_GS.jpg" alt="cadastro_GS">
+        </div>
+
+        <div class="campo_cadastro">
+
+            <div class="cadastro-header">
+                <h1 class="titulo">Crie sua conta</h1>
+                <p>Escolha seu tipo de perfil e faça parte da Get Services</p>
+            </div>
+
+            <form class="form-cadastro" id="formCadastro">
+
+                <label for="tipoUsuario">Tipo de cadastro</label>
+                <select id="tipoUsuario" name="tipoUsuario" required>
+                    <option value="" disabled selected>Selecione uma opção</option>
+                    <option value="cliente">Cliente</option>
+                    <option value="profissional">Profissional</option>
+                </select>
+
+                <label for="nome">Nome completo</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+
+
+                <div id="camposProfissional" class="campos-profissional">
+                    <label for="areaAtuacao">Área de atuação</label>
+                    <input type="text" id="areaAtuacao" name="areaAtuacao" placeholder="Ex: limpeza, elétrica, informática">
+                </div>
+
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" placeholder="Crie uma senha" required>
+                <div class="botoes">
+                    <button type="submit">Cadastrar</button>
+
+                    <a href="../pagina_principal/index.html" class="voltar">
+                        <button type="button">voltar</button>
+                    </a>
+                </div>
+
+                <p class="texto-login">
+                    Já possui uma conta? <a href="../login/login.html">Entrar</a>
+                </p>
+            <p id="mensagemCadastro" class="mensagem"></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'http://localhost:8080/api';
+
+        const tipoUsuario = document.getElementById('tipoUsuario');
+        const camposProfissional = document.getElementById('camposProfissional');
+        const areaAtuacao = document.getElementById('areaAtuacao');
+        const formCadastro = document.getElementById('formCadastro');
+        const mensagemCadastro = document.getElementById('mensagemCadastro');
+
+        tipoUsuario.addEventListener('change', function () {
+            if (tipoUsuario.value === 'profissional') {
+                camposProfissional.style.display = 'block';
+                areaAtuacao.required = true;
+            } else {
+                camposProfissional.style.display = 'none';
+                areaAtuacao.required = false;
+                areaAtuacao.value = '';
+            }
+        });
+
+        formCadastro.addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            const dadosCadastro = {
+                nome: document.getElementById('nome').value,
+                email: document.getElementById('email').value,
+                senha: document.getElementById('senha').value,
+                tipoUsuario: tipoUsuario.value,
+                areaAtuacao: areaAtuacao.value
+            };
+
+            try {
+                const resposta = await fetch(`${API_URL}/auth/cadastro`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(dadosCadastro)
+                });
+
+                const dados = await resposta.json();
+
+                if (!resposta.ok) {
+                    throw new Error(dados.erro || 'Não foi possível realizar o cadastro.');
+                }
+
+                mensagemCadastro.textContent = `Cadastro realizado com sucesso. Bem-vindo(a), ${dados.nome}!`;
+                mensagemCadastro.className = 'mensagem sucesso';
+                formCadastro.reset();
+                camposProfissional.style.display = 'none';
+            } catch (erro) {
+                mensagemCadastro.textContent = erro.message;
+                mensagemCadastro.className = 'mensagem erro';
+            }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="../theme/react-theme-toggle.js"></script>
+</body>
+
+</html>
