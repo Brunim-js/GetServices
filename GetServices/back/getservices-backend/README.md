@@ -11,6 +11,7 @@ API REST em Spring Boot para integração com o front-end da Get Services.
 - Spring Validation
 - Spring Security Crypto, usado apenas para BCrypt
 - MySQL
+- React
 
 ## Configuração do banco
 
